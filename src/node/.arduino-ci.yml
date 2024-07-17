@@ -1,0 +1,23 @@
+# Configuration for Continuous Integration unit tests
+#
+# See: https://github.com/Arduino-CI/arduino_ci
+#
+
+platforms:
+  nano:
+    board: arduino:avr:nano
+    package: arduino:avr
+    gcc:
+      features:
+      defines:
+        - __AVR_ATmega328__
+      warnings:
+      flags:
+        - -g
+        - -O0
+        - --coverage
+        - -D__TEST__
+
+unittest:
+  platforms:
+    - nano

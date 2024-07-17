@@ -1,0 +1,69 @@
+{
+  "SECRETS": {
+    "ADMIN_USERNAME": "admin",
+    "ADMIN_PASSWORD": "zippyd"
+  },
+  "GENERAL": {
+    "HTTP_PORT": 5000,
+    "ADMIN_USERNAME": "admin",
+    "ADMIN_PASSWORD": "zippyd",
+    "SECONDARIES": [],
+    "SECONDARY_TIMEOUT": 300,
+    "DEBUG": false,
+    "CORS_ALLOWED_HOSTS": "*",
+    "FORCE_S32_BPILL_FLAG": false,
+    "DEF_NODE_FWUPDATE_URL": "",
+    "SHUTDOWN_BUTTON_GPIOPIN": 18,
+    "SHUTDOWN_BUTTON_DELAYMS": 2500,
+    "DB_AUTOBKP_NUM_KEEP": 30,
+    "RACE_START_DELAY_EXTRA_SECS": 0.9,
+    "LOG_SENSORS_DATA_RATE": 300,
+    "SERIAL_PORTS": [],
+    "LAST_MODIFIED_TIME": 1721230888
+  },
+  "HARDWARE": {
+    "I2C_BUS": 1
+  },
+  "LOGGING": {
+    "CONSOLE_LEVEL": "INFO",
+    "SYSLOG_LEVEL": "NONE",
+    "FILELOG_LEVEL": "INFO",
+    "FILELOG_NUM_KEEP": 30,
+    "CONSOLE_STREAM": "stdout"
+  },
+  "SENSORS": {},
+  "NODE": {
+    "FREQ0": 5658,
+    "FREQ1": 5695,
+    "FREQ2": 5760,
+    "FREQ3": 5800,
+    "FREQ4": 5880,
+    "FREQ5": 5917,
+    "FREQ6": 1111,
+    "FREQ7": 1111,
+    "TT0": 30,
+    "CT0": 80,
+    "CO0": 20,
+    "TT1": 30,
+    "CT1": 80,
+    "CO1": 20,
+    "TT2": 30,
+    "CT2": 80,
+    "CO2": 20,
+    "TT3": 30,
+    "CT3": 80,
+    "CO3": 20,
+    "TT4": 30,
+    "CT4": 80,
+    "CO4": 20,
+    "TT5": 30,
+    "CT5": 80,
+    "CO5": 30,
+    "TT6": 30,
+    "CT6": 80,
+    "CO6": 20,
+    "TT7": 30,
+    "CT7": 80,
+    "CO7": 20
+  }
+}

@@ -1,0 +1,32 @@
+
+# Flask
+Flask==1.*
+itsdangerous==1.1.*
+Jinja2==2.11.3
+Werkzeug==1.*
+MarkupSafe==1.*
+
+# Socket
+Flask-SocketIO==4.*
+python-socketio==4.*
+python-engineio==3.*
+websocket-client==1.5.*
+
+# gevent
+gevent==23.9.*
+gevent-websocket==0.10.*
+greenlet==3.0.*
+cffi==1.15.*
+
+# Other
+pyserial==3.4.*
+requests==2.31.*
+
+# Pi IO remove below if not running on PI
+smbus2==0.4.*
+RPi.GPIO==0.7.1a4
+rpi-ws281x==4.3.*
+pi-ina219==1.4.*
+RPi.bme280==0.2.*
+lgpio==0.2.2.0
+gpiozero==2.*

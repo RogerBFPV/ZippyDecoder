@@ -243,11 +243,12 @@ The firmware for the ZippyDecoder nodes will need to be installed (or updated). 
 
 For Arduino-based node boards, see the '[src/node/readme_Arduino.md](../src/node/readme_Arduino.md)' file for more information and instructions for installing the node firmware code.
 
-For the S32_BPill board, the recommended method for installing the currently-released node firmware is to use the `Update Nodes` button (in the 'System' section on the 'Settings' page) on the ZippyDecoder web GUI.<br>
-The "dtoverlay=miniuart-bt" line needs to have been added to the 'boot' _config.txt_ file for the flash-update to succeed (see instructions above).<br>
-Note that the flash-update steps described in '[src/node/readme_S32_BPill.md](../src/node/readme_S32_BPill.md)' are for developers who wish to build the S32_BPill node firmware from the source code.
+For the S32_BPill board, the recommended method for installing the currently-released node firmware is to use the `Update Nodes` button on the ZippyDecoder web GUI.<br>
 
-The node-code version may be viewed in the Server Log, and via the "About ZippyDecoder" item in the drop-down menu.
+
+The "dtoverlay=miniuart-bt" line needs to have been added to the 'boot' _config.txt_ file for the flash-update to succeed (see instructions above).<br>
+
+The node-code version may be viewed via the Update Nodes button. 
 
 ----------------------------------------------------------------------------
 

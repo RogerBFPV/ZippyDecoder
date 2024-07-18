@@ -107,17 +107,11 @@ Using a terminal window, install Python and the Python drivers for the GPIO:
 ```
 sudo apt install python3-dev python3-venv libffi-dev python3-smbus build-essential python3-pip git scons swig python3-rpi.gpio
 ```
-Enter the following commands to setup the Python virtual environment:
+
+To disable any previous services, such as rotorohazard (so it no longer runs when the system starts up), enter:
 ```
-cd ~
-python -m venv --system-site-packages .venv
+sudo systemctl disable rotorhazard.service
 ```
-Configure the user shell to automatically activate the Python virtual environment by entering the command `nano .bashrc` to edit the ".bashrc" file and adding the following lines to the end of the file:
-```
-VIRTUAL_ENV_DISABLE_PROMPT=1
-source ~/.venv/bin/activate
-```
-Save and exit the editor (CTRL-X, Y, ENTER)
 
 ### 6. Reboot System
 After the above setup steps are performed, the system should be rebooted by entering the following using a terminal window:
@@ -127,11 +121,20 @@ sudo reboot
 
 ### 7. Install the ZippyDecoder Server
 
-
 ```bash
 cd ~
 git clone https://github.com/RogerBFPV/ZippyDecoder.git
 ```
+
+Enter the following commands to setup the Python virtual environment:
+```
+cd ZippyDecoder
+python -m venv --system-site-packages .venv
+```
+Configure the user shell to automatically activate the Python virtual environment by entering the command `nano .bashrc` to edit the ".bashrc" file and adding the following lines to the end of the file:
+```
+VIRTUAL_ENV_DISABLE_PROMPT=1
+source ~/ZippyDecoder/.venv/bin/activate 
 
 Install the ZippyDecoder server dependencies (be patient, this may take a few minutes):
 
@@ -187,13 +190,13 @@ After=multi-user.target
 [Service]
 User=pi
 WorkingDirectory=/home/pi/ZippyDecoder/src/server
-ExecStart=/home/pi/.venv/bin/python server.py
+ExecStart=/home/pi/ZippyDecoder/.venv/bin/python server.py
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-*Note*: If the username was configured as something other than "pi" during the Operating System setup, be sure to change the value `pi` in `User`, `WorkingDirectory` and `ExecStart` to match your username.
+*Note*: If the username was configured as something other than "pi" during the Operating System setup, be sure to change the value `pi` in `User`, `WorkingDirectory` and `ExecStart` to match your username. For NuclearHazard this may be NuclearHazard username.
 
 Save and exit (CTRL-X, Y, ENTER)
 
@@ -224,6 +227,7 @@ sudo systemctl status zippydecoded.service
 ```
 If the service is running then the output will contain `Active: active (running)`. Hit the 'Q' key to exit the status command.
 
+
 ### Shutting Down the System
 A system shutdown should always be performed before unplugging the power, either by clicking on the 'Shutdown' button on the 'Settings' page on the web GUI, or by entering the following in a terminal:
 ```
@@ -247,53 +251,7 @@ The node-code version may be viewed in the Server Log, and via the "About ZippyD
 
 ----------------------------------------------------------------------------
 
-## Enable Port Forwarding
-The ZippyDecoder server defaults to port 5000, as this is necessary for some 3rd party integrations. While you can change the port via `HTTP_PORT` in the `config.json` file, a better approach is often to forward the web default port of 80 to 5000.
-
-By default, HTTP uses port 80. Other values will require that the port be included as part of the URL entered into client browsers. If other web services are running on the Pi, port 80 may already be in use and reusing it will cause problems. If port 80 is used directly via `HTTP_PORT`, the server may need to be run using the *sudo* command. With the following commands, the server runs on port 5000 but the system sends the traffic from port 80 to it.
-
-```
-sudo apt-get install iptables
-sudo iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to-ports 5000
-sudo iptables -A PREROUTING -t nat -p tcp --dport 8080 -j REDIRECT --to-ports 80
-sudo iptables-save
-sudo apt-get install iptables-persistent
-```
-After running these commands, ZippyDecoder will be available from both ports 80 and 5000. When available by port 80, you may leave the port off when accessing the server, i.e.: `http://127.0.0.1`
-
-Note: The second *iptables* command will forward port 8080 to 80, so services that would normally be available on port 80 will instead be available on port 8080. If port 80 services are not present or if other services are using port 8080, this *iptables* command may be omitted.
-<br/>
-
-----------------------------------------------------------------------------
-
-<a id="update"></a>
-## Updating an Existing Installation
-
-Before updating, any currently-running ZippyDecoder server should be stopped. If installed as a service, it may be stopped with a command like:
-```
-sudo systemctl stop zippydecoder
-```
-
-To update an existing ZippyDecoder installation: Go to the [Latest Release page](https://github.com/ZippyDecoder/ZippyDecoder/releases/latest) for the project and note the version code. In the commands below, replace the two occurrences of "1.2.3" with the current version code, and enter the commands:
-```
-cd ~
-wget https://codeload.github.com/ZippyDecoder/ZippyDecoder/zip/v1.2.3 -O temp.zip
-unzip temp.zip
-mv ZippyDecoder ZippyDecoder.old
-mv ZippyDecoder-1.2.3 ZippyDecoder
-rm temp.zip
-cp ZippyDecoder.old/src/server/config.json ZippyDecoder/src/server/
-cp ZippyDecoder.old/src/server/database.db ZippyDecoder/src/server/
-```
-The previous installation ends up in the 'ZippyDecoder.old' directory, which may be moved or deleted.
-
-For ZippyDecoder the minimum version of Python supported is 3.8. If the installed version is Python 3.7 or older, see this [wiki article](https://github.com/ZippyDecoder/ZippyDecoder/wiki/Installing-Newer-Versions-of-Python-on-the-Raspberry-Pi) for a way to install a newer version of Python.
-
-The ZippyDecoder server dependencies will also need to be updated (be patient, this command may take a few minutes):
-```
-cd ~/ZippyDecoder/src/server
-pip install --upgrade --no-cache-dir -r requirements.txt
-```
+The ZippyDecoder server defaults to port 5000, as this is necessary for some 3rd party integrations.
 
 ----------------------------------------------------------------------------
 

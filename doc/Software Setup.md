@@ -12,8 +12,6 @@
 
 The central software component of the ZippyDecoder system is its server, written in Python, which operates its functions and serves up web pages to browsers. In a standard setup, the server is run on a [Raspberry Pi](https://www.raspberrypi.org). (It is also possible to run ZippyDecoder on other types of hardware -- see the [Other Operating Systems](#otheros) section below.)
 
-Note: If ZippyDecoder is already installed, see the [Updating an existing installation](#update) section below.
-
 Once the server is setup and running, see the ZippyDecoder Race Timer [User Guide](User%20Guide.md) for further instructions and setup tips.
 
 ## Install ZippyDecoder on a Raspberry Pi
@@ -24,7 +22,9 @@ Note: Many of the setup commands below require that the Rasperry Pi has internet
 
 Install the Raspberry Pi OS, following the official instructions: https://www.raspberrypi.org/help
 
-The standard-recommended setup is to use a Raspberry Pi 3, Pi 4 or Pi 5 board, install the [Raspberry Pi OS](https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit) (Desktop), and configure it with a user named "pi".
+The standard-recommended setup is to use a Raspberry Pi 3, Pi 4 or Pi 5 board, install the [Raspberry Pi OS](https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit) (Desktop), and configure it with a user named "pi". Also if using the 'Raspberry Pi Imager', Apply custimisation settings, select services, and enable SSH with password authentication. 
+
+
 
 Tip: Any time you intend to use a monitor (via HDMI) with the Raspberry Pi, connect it before powering up the Pi. Connecting the monitor after power up tends to not work (blank screen).
 
@@ -233,7 +233,6 @@ A system shutdown should always be performed before unplugging the power, either
 ```
 sudo shutdown now
 ```
-The physical [shutdown button](Shutdown%20Button.md) may also be used on hardware that supports it.
 
 ----------------------------------------------------------------------------
 

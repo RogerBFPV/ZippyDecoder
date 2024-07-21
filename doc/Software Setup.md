@@ -4,9 +4,9 @@
 - [Install ZippyDecoder on a Raspberry Pi](#install-zippydecoder-on-a-raspberry-pi)
 - [Running the ZippyDecoder Server](#running-the-zippydecoder-server)
 - [ZippyDecoder Node Code](#zippydecoder-node-code)
-- [Enable Port Forwarding](#enable-port-forwarding)
 - [Other Operating Systems](#other-operating-systems)
 - [Logging](#logging)
+- [Update Existing ZippyDecoder](#update-existing-installationh-of-zippydecoder)
 
 ## Introduction
 
@@ -120,6 +120,9 @@ sudo reboot
 ```
 
 ### 7. Install the ZippyDecoder Server
+Below are the steps for first time install. If you you've already installed then see the section 
+[Update Existing ZippyDecoder](#update-existing-installationh-of-zippydecoder)
+
 
 ```bash
 cd ~
@@ -374,6 +377,8 @@ When troubleshooting, another place to check for error messages is the system lo
 
 
 <br/>
+
+----------------------------------------------------------------------------
 
 ### Update existing installation of ZippyDecoder
 If you have ZippyDecoder already installed and just want to refresh its code

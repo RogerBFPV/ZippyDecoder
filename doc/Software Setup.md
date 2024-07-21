@@ -339,6 +339,13 @@ To view the web-GUI interface, open up a web browser and enter into the address 
 <br>
 
 ----------------------------------------------------------------------------
+## Update existing installation of ZippyDecoder
+If you have ZippyDecoder already installed and just want to refresh its code
+```
+cd ~/ZippyDecoder
+git pull origin main
+```
+ 
 
 <a id="logging"></a>
 ## Logging

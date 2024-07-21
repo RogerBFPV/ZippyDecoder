@@ -6,13 +6,18 @@
 - [ZippyDecoder Node Code](#zippydecoder-node-code)
 - [Other Operating Systems](#other-operating-systems)
 - [Logging](#logging)
-- [Update Existing ZippyDecoder](#update-existing-installationh-of-zippydecoder)
+- [Update Existing ZippyDecoder](#update-existing-installation-of-zippydecoder)
 
 ## Introduction
 
 The central software component of the ZippyDecoder system is its server, written in Python, which operates its functions and serves up web pages to browsers. In a standard setup, the server is run on a [Raspberry Pi](https://www.raspberrypi.org). (It is also possible to run ZippyDecoder on other types of hardware -- see the [Other Operating Systems](#otheros) section below.)
 
 Once the server is setup and running, see the ZippyDecoder Race Timer [User Guide](User%20Guide.md) for further instructions and setup tips.
+
+If you've previously followed these steps to Install and simply want to refresh the existing installation see the section 
+[Update Existing ZippyDecoder](#update-existing-installation-of-zippydecoder)
+
+
 
 ## Install ZippyDecoder on a Raspberry Pi
 
@@ -120,9 +125,6 @@ sudo reboot
 ```
 
 ### 7. Install the ZippyDecoder Server
-Below are the steps for first time install. If you you've already installed then see the section 
-[Update Existing ZippyDecoder](#update-existing-installationh-of-zippydecoder)
-
 
 ```bash
 cd ~

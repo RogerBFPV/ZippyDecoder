@@ -135,6 +135,7 @@ Configure the user shell to automatically activate the Python virtual environmen
 ```
 VIRTUAL_ENV_DISABLE_PROMPT=1
 source ~/ZippyDecoder/.venv/bin/activate 
+```
 
 Install the ZippyDecoder server dependencies (be patient, this may take a few minutes):
 

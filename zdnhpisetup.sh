@@ -10,7 +10,8 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 # update and install dependencies
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install dhcpcd5 python3.11-venv python3-dev libffi-dev python3-smbus build-essential python3-pip git scons swig python3-rpi.gpio default-jdk-headless libjpeg-dev libopenjp2-7-dev -y
+
+sudo apt-get install dhcpcd5 python-venv python3-dev libffi-dev python3-smbus build-essential python3-pip git scons swig python3-rpi.gpio  -y
 # for VRxC flashing
 python -m pip install esptool
 

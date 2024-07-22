@@ -1,7 +1,8 @@
 # Software Setup Instructions
 
 - [Introduction](#introduction)
-- [Install ZippyDecoder on a Raspberry Pi](#install-zippydecoder-on-a-raspberry-pi)
+- [Automated Install ZippyDecoder on a Raspberry Pi](#automated-install-zippydecoder-on-a-raspberry-pi)
+- [Manual Install ZippyDecoder on a Raspberry Pi](#manual-install-zippydecoder-on-a-raspberry-pi)
 - [Running the ZippyDecoder Server](#running-the-zippydecoder-server)
 - [ZippyDecoder Node Code](#zippydecoder-node-code)
 - [Other Operating Systems](#other-operating-systems)
@@ -18,8 +19,23 @@ If you've previously followed these steps to Install and simply want to refresh 
 [Update Existing ZippyDecoder](#update-existing-installation-of-zippydecoder)
 
 
+----------------------------------------------------------------------------
+## Automated Install ZippyDecoder on a Raspberry Pi
+Once you've installed the Pi OS with the imager, you can run the command below which should automate steps 1-9 of the manual install.
+ Note that the username on your Pi OS installation must be NuclearHazard.
+```
+curl -s https://rogerbfpv.github.io/ZippyDecoder/zdnhpisetup.sh | bash -s nuclearwifi
+```
+The above does enable the local hotspot service. 
+To disable the hotspot, do 
+```
+sudo systemctl disable hotspot.service
+```
 
-## Install ZippyDecoder on a Raspberry Pi
+Skip now to the section to install the Node code - [ZippyDecoder Node Code](#zippydecoder-node-code)
+
+----------------------------------------------------------------------------
+## Manual Install ZippyDecoder on a Raspberry Pi
 
 ### 1. Install the Raspberry Pi Operating System
 
@@ -178,7 +194,7 @@ The server may be stopped by hitting Ctrl-C
 
 Once the server is running, its web-GUI interface may be accessed in a browser; see the [Connect to the Server](User%20Guide.md#connect-to-the-server) section in the [User Guide](User%20Guide.md) for more information.
 
-### Start on Boot
+### 9. Start on Boot
 
 To configure the system to automatically start the ZippyDecoder server when booting up:
 

@@ -66,8 +66,8 @@ cd ~/ZippyDecoder/src/server
 pip install -r requirements.txt
 pip install pillow
 python -c "import Config; Config.Config(None)"
-sed -i 's/"ADMIN_USERNAME": "admin"/"ADMIN_USERNAME": "NuclearHazard"/' config.json
-sed -i 's/"ADMIN_PASSWORD": "rotorhazard"/"ADMIN_PASSWORD": "nuclearhazard"/' config.json
+sed -i 's/"ADMIN_USERNAME": "admin"/"ADMIN_USERNAME": "admin"/' config.json
+sed -i 's/"ADMIN_PASSWORD": "rotorhazard"/"ADMIN_PASSWORD": "zippyd"/' config.json
 cd ~
 
 echo "[Unit]

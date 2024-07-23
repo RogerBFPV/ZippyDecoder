@@ -56,7 +56,7 @@ core_freq=250
  # git way
 git clone  https://github.com/RogerBFPV/ZippyDecoder.git
 
-python -m venv --system-site-packages ZippyDecoer/.venv
+python -m venv --system-site-packages ZippyDecoder/.venv
 echo "
 VIRTUAL_ENV_DISABLE_PROMPT=1
 source ~/ZippyDecoder/.venv/bin/activate" | sudo tee -a ~/.bashrc

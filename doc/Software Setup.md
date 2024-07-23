@@ -21,8 +21,6 @@ If you've previously followed these steps to Install and simply want to refresh 
 
 ----------------------------------------------------------------------------
 ## Automated Install ZippyDecoder on a Raspberry Pi
-Note to testers: early tests have shown, this automated install is not working properly. stay tuned. 
-
 Once you've installed the Pi OS with the imager, you can run the command below which should automate steps 1-9 of the manual install.
  Note that the username on your Pi OS installation must be NuclearHazard.
 ```

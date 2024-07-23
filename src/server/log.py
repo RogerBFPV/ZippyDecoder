@@ -24,7 +24,7 @@ from datetime import datetime
 DEF_CONSOLE_STREAM = sys.stdout  # default console-output stream
 DEF_FILELOG_NUM_KEEP = 30        # default number of log files to keep
 
-LOG_FILENAME_STR = "qz.log"
+LOG_FILENAME_STR = "zq.log"
 LOG_DIR_NAME = "logs"
 LOGZIP_DIR_NAME = "logs/zip"
 
@@ -326,7 +326,7 @@ def create_log_files_zip(logger, config_file, db_file, boot_config_file="/boot/c
             if not os.path.exists(LOGZIP_DIR_NAME):
                 os.makedirs(LOGZIP_DIR_NAME)
             time_str = datetime.now().strftime('%Y%m%d_%H%M%S')
-            zip_path_name = LOGZIP_DIR_NAME + "/qz_logs_" + time_str + ".zip"
+            zip_path_name = LOGZIP_DIR_NAME + "/zq_logs_" + time_str + ".zip"
             logger.info("Creating logs .zip file: {0}".format(zip_path_name))
             gevent.sleep(0.1)  # pause to let log message get written
             zip_file_obj = zipfile.ZipFile(zip_path_name, 'w', zipfile.ZIP_DEFLATED)

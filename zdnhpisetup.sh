@@ -11,7 +11,7 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 sudo apt-get update
 sudo apt-get upgrade -y
 
-sudo apt-get install dhcpcd5 python-venv python3-dev libffi-dev python3-smbus build-essential python3-pip git scons swig python3-rpi.gpio  -y
+sudo apt-get install dhcpcd5 python3-venv python3-dev libffi-dev python3-smbus build-essential python3-pip git scons swig python3-rpi.gpio  -y
 # for VRxC flashing
 python -m pip install esptool
 

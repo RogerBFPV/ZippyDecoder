@@ -57,11 +57,21 @@ core_freq=250
  # git way
 git clone  https://github.com/RogerBFPV/ZippyDecoder.git
 
+echo '
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+      .   "$HOME/.bashrc"
+    fi
+' | sudo tee -a ~/.profile
+sudo chmod 755 ~/.profile
+sudo chown NuclearHazard:NuclearHazard  ~/.profile
+
 python -m venv --system-site-packages ZippyDecoder/.venv
 echo "
-VIRTUAL_ENV_DISABLE_PROMPT=1
 source ~/ZippyDecoder/.venv/bin/activate" | sudo tee -a ~/.bashrc
 source ~/ZippyDecoder/.venv/bin/activate
+
+sudo chown NuclearHazard:NuclearHazard  ~/.bashrc
 
 cd ~/ZippyDecoder/src/server
 pip install -r requirements.txt

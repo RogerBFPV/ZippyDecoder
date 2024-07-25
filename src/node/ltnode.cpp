@@ -1,13 +1,13 @@
 #ifndef __TEST__
-// ZippyDecoder (livetime compatible)
-// Utilizing RotorHazard FPV Race Timing components
+// ZippyDecoder (livetime compatible) by Roger Bess
+// Utilizing RotorHazard FPV Race Timing components by Michael Niggel
 // Based on Delta 5 Race Timer by Scott Chin
 // SPI driver based on fs_skyrf_58g-main.c Written by Simon Chambers
 // I2C functions by Mike Ochtman
 //
 // MIT License
 //
-// Copyright (c) 2019 Michael Niggel and other contributors
+// Copyright (c) 2024 Roger Bess and other contributors
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -38,7 +38,7 @@
 // Note: Configure Arduino NODE_NUMBER value in 'config.h'
 
 // firmware version string (prefix allows text to be located in '.bin' file)
-const char *firmwareVersionString = "FIRMWARE_VERSION: 1.1.5";
+const char *firmwareVersionString = "FIRMWARE_VERSION: 0.0.5";
 
 // build date/time strings
 const char *firmwareBuildDateString = "FIRMWARE_BUILDDATE: " __DATE__;

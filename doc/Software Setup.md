@@ -194,7 +194,7 @@ python server.py
 ```
 The server may be stopped by hitting Ctrl-C
 
-Once the server is running, its web-GUI interface may be accessed in a browser; see the [Connect to the Server](User%20Guide.md#connect-to-the-server) section in the [User Guide](User%20Guide.md) for more information.
+Once the server is running, its web-GUI interface may be accessed in a browser via http://xx.xx.xx.xx:5000 ; see the [Connect to the Server](User%20Guide.md#connect-to-the-server) section in the [User Guide](User%20Guide.md) for more information.
 
 ### 9. Start on Boot
 

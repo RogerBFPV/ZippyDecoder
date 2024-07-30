@@ -32,4 +32,3 @@ See Also:<br/>
 [doc/Tuning Parameters.md](Tuning%20Parameters.md)<br/>
 [doc/Software Setup.md](Software%20Setup.md)<br/>
 [doc/Hardware Setup.md](Hardware%20Setup.md)<br/>
-[Build Resources (PCB, etc) &#10132;&#xFE0E;](https://github.com/ZippyDecoder/ZippyDecoder/tree/main/resources/README.md)

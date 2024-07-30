@@ -43,8 +43,6 @@ The shield should be soldered back in place after removing the resistor.
 Complete wiring connections between each Arduino and RX5808.
 ![receiver node wiring](img/Receivernode.png)
 
-Note: A simple receiver node may also be constructed and attached via USB -- see [doc/USB Nodes.md](USB%20Nodes.md).
-
 ### System Assembly
 Complete wiring connections between each Arduino and the Raspberry Pi.
 
@@ -55,7 +53,5 @@ Note: be sure all Receiver Nodes and the Raspberry Pi are tied to a common groun
 
 See Also:<br/>
 [doc/Hardware Setup.md](Hardware%20Setup.md)<br/>
-[doc/USB Nodes.md](USB%20Nodes.md)<br/>
 [doc/Software Setup.md](Software%20Setup.md)<br/>
 [doc/User Guide.md](User%20Guide.md)<br/>
-[Build Resources (PCB, etc) &#10132;&#xFE0E;](https://github.com/ZippyDecoder/ZippyDecoder/tree/main/resources)

@@ -22,9 +22,16 @@ If you've previously followed these steps to Install and simply want to refresh 
 
 ----------------------------------------------------------------------------
 ## Automated Install ZippyDecoder on a Raspberry Pi
+Install the Pi OS using the Raspberry Pi Imager tool:
+* set hostname: NuclearQuads
+* enable ssh: with password authentication
+* set username to NuclearQuads  with password nuclearquads
+* configure wireless lan: (to your home network)
+* set locale settings: <your timezone>
+
+
 Once you've installed the Pi OS with the imager, you can run the command below which should automate steps 1-9 of the manual install.
  Note that the username on your Pi OS installation must be NuclearQuads.
- It is also recommended to start out with imager settings to connect to your local wifi, which can help setup.
 ```
 curl -s https://rogerbfpv.github.io/ZippyDecoder/zdnqpisetup.sh | bash -s nuclearwifi
 ```

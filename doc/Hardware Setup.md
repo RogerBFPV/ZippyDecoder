@@ -7,21 +7,47 @@ For general information on the Arduino-nodes version of the timer, see '[doc/Tim
 ### Add a Directional RF Shield
 A directional RF shield significantly improves the system's ability to reject false passes. See [RF shielding](Shielding%20and%20Course%20Position.md)
 
-### WS2812b LED Support
-
-For the [S32_BPill board](../resources/S32_BPill_PCB/README.md) connect to J6 "Pi_LED" (near the middle of the board); pin 1 is ground, pin 2 is signal.
-
-For the [6 Node STM32](../resources/6_Node_BPill_PCB/README.md) board use the 'LEDS' connector.
-
-For the [ZippyDecoder PCB 1.2 board](../resources/PCB/README.md) use the LED OUT connector (beware of overloading the 5V power supply).
-
-For direct wiring to the Pi: The pins in the green box is what were already used by the timer. The pins in the red box is where you connect the signal and ground from the ws2812b LEDs.  The LEDs will require a separate power source.
-
-
 -----------------------------
+
+All supported build styles offer full timing accuracy but differ in size, cost, and ease of use.
+
+<br />
+
+## Full-featured S32_BPill
+
+Standard, current build using the STM32 "Blue Pill" in place of individual Arduinos. Recommended for event managers with the available time and resources to acquire parts and complete the build.
+
+- Supports up to 8 receivers (or more via USB)
+- Supports all optional hardware features: current sensing, voltage sensing, RTC, buzzer, Status LED
+- Ease-of-use features: power switch, shutdown button
+
+<br />
+
+## NuclearHazard Core
+
+Designed for PCB manufacturer to be able to populate components instead of ordering individually. Available for purchase from the board designer.
+
+- Supports up to 8 receivers (or more via USB)
+- Lowest cost self-contained build
+- Smallest size
+- Simplest assembly
+
+[NuclearHazard Core (Prepopulated S32)](NuclearHazardCore/)
+
+<br />
+
+## Delta 5
+
+Existing Delta 5 builds may be used but are not recommended for new builds.
+
+- Supports up to 8 receivers when paired with second PCB (or more via USB)
+- Highest cost for required components
+- Arduinos must be manually addressed with code modification
+- Arduinos must be removed to reprogram
+
+Replace the Delta5 server software using the current RotorHazard server [setup instructions](doc/Software%20Setup.md), ensuring that you complete a [re-flash of the Arduinos](doc/Software%20Setup.md#rotorhazard-node-code).
 
 See Also:<br/>
 [doc/USB Nodes.md](USB%20Nodes.md)<br/>
 [doc/Software Setup.md](Software%20Setup.md)<br/>
 [doc/User Guide.md](User%20Guide.md)<br/>
-[Build Resources (PCB, etc) &#10132;&#xFE0E;](https://github.com/ZippyDecoder/ZippyDecoder/tree/main/resources/README.md)

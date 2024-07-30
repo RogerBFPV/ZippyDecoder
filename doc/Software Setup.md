@@ -434,4 +434,3 @@ git pull origin main
 See Also:<br/>
 [doc/Hardware Setup.md](Hardware%20Setup.md)<br/>
 [doc/User Guide.md](User%20Guide.md)<br/>
-[Build Resources (PCB, etc) &#10132;&#xFE0E;](https://github.com/ZippyDecoder/ZippyDecoder/tree/main/resources/README.md)

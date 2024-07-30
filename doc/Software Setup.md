@@ -23,10 +23,10 @@ If you've previously followed these steps to Install and simply want to refresh 
 ----------------------------------------------------------------------------
 ## Automated Install ZippyDecoder on a Raspberry Pi
 Once you've installed the Pi OS with the imager, you can run the command below which should automate steps 1-9 of the manual install.
- Note that the username on your Pi OS installation must be NuclearHazard.
+ Note that the username on your Pi OS installation must be NuclearQuads.
  It is also recommended to start out with imager settings to connect to your local wifi, which can help setup.
 ```
-curl -s https://rogerbfpv.github.io/ZippyDecoder/zdnhpisetup.sh | bash -s nuclearwifi
+curl -s https://rogerbfpv.github.io/ZippyDecoder/zdnqpisetup.sh | bash -s nuclearwifi
 ```
 The above does enable the local hotspot service. 
 To disable the hotspot, do 
@@ -220,7 +220,7 @@ ExecStart=/home/pi/ZippyDecoder/.venv/bin/python server.py
 WantedBy=multi-user.target
 ```
 
-*Note*: If the username was configured as something other than "pi" during the Operating System setup, be sure to change the value `pi` in `User`, `WorkingDirectory` and `ExecStart` to match your username. For NuclearHazard this may be NuclearHazard username.
+*Note*: If the username was configured as something other than "pi" during the Operating System setup, be sure to change the value `pi` in `User`, `WorkingDirectory` and `ExecStart` to match your username. For NuclearQuads this may be NuclearQuads username.
 
 Save and exit (CTRL-X, Y, ENTER)
 
@@ -366,14 +366,14 @@ To view the web-GUI interface, open up a web browser and enter into the address 
 * If the system connects to a local wifi, then it will not create a local hotspot. Use the admin console to your WiFi router to determine the IP address assigned..
 * If the system is connected via ethernet to a local router, use the router console to determine the ip address assigned.
 * If there is no local Wifi, and no Ethernet, then the system should have created a local hotspot:
- SSID: NuclearHazard
+ SSID: NuclearQuads
  password: nuclearhazard
  Connect your computer to this router, and the IP address should be 10.42.0.1
 
 
  Connect to the system and login via ssh.
 ```
-ssh NuclearHazard@10.42.0.1 (or your ip address
+ssh NuclearQuads@10.42.0.1 (or your ip address
 ```
 
  Run the command

@@ -64,14 +64,14 @@ echo '
     fi
 ' | sudo tee -a ~/.profile
 sudo chmod 755 ~/.profile
-sudo chown NuclearHazard:NuclearHazard  ~/.profile
+sudo chown NuclearQuads:NuclearQuads  ~/.profile
 
 python -m venv --system-site-packages ZippyDecoder/.venv
 echo "
 source ~/ZippyDecoder/.venv/bin/activate" | sudo tee -a ~/.bashrc
 source ~/ZippyDecoder/.venv/bin/activate
 
-sudo chown NuclearHazard:NuclearHazard  ~/.bashrc
+sudo chown NuclearQuads:NuclearQuads  ~/.bashrc
 
 cd ~/ZippyDecoder/src/server
 pip install -r requirements.txt
@@ -85,9 +85,9 @@ echo "[Unit]
 Description=ZippyDecoder decoder
 After=multi-user.target
 [Service]
-User=NuclearHazard
-WorkingDirectory=/home/NuclearHazard/ZippyDecoder/src/server
-ExecStart=/home/NuclearHazard/ZippyDecoder/.venv/bin/python server.py
+User=NuclearQuads
+WorkingDirectory=/home/NuclearQuads/ZippyDecoder/src/server
+ExecStart=/home/NuclearQuads/ZippyDecoder/.venv/bin/python server.py
 [Install]
 WantedBy=multi-user.target" | sudo tee -a /lib/systemd/system/zippydecoder.service
 
@@ -103,9 +103,9 @@ sudo apt-get -y install iptables-persistent
 echo "if iwgetid -r | grep -q .; then
     echo "Wi-Fi network found. Not creating a hotspot."
 else
-    nmcli dev wifi hotspot ifname wlan0 ssid "NuclearHazard" password "nuclearhazard"
-fi" | sudo tee -a /home/NuclearHazard/hotspot.sh
-sudo chmod +x /home/NuclearHazard/hotspot.sh
+    nmcli dev wifi hotspot ifname wlan0 ssid "NuclearQuads" password "nuclearquads"
+fi" | sudo tee -a /home/NuclearQuads/hotspot.sh
+sudo chmod +x /home/NuclearQuads/hotspot.sh
 
 echo "[Unit]
 Description=Hotspot Service
@@ -115,8 +115,8 @@ Wants=NetworkManager.service
 [Service]
 Type=simple
 ExecStartPre=/bin/sleep 20
-ExecStart=sudo /home/NuclearHazard/hotspot.sh
-WorkingDirectory=/home/NuclearHazard/
+ExecStart=sudo /home/NuclearQuads/hotspot.sh
+WorkingDirectory=/home/NuclearQuads/
 
 [Install]
 WantedBy=multi-user.target" | sudo tee -a /etc/systemd/system/hotspot.service

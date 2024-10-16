@@ -110,6 +110,10 @@ def graphs():
 def rssi():
     return render_template('rssi.html', async_mode=socketio.async_mode)
 
+@app.route('/tuning')
+def tuning():
+    return render_template('tuning.html')
+
 @app.route('/updatenodes')
 @requires_auth
 def render_updatenodes():
